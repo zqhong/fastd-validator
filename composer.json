@@ -1,0 +1,24 @@
+{
+  "name": "zqhong/fastd-validator",
+  "type": "library",
+  "authors": [
+    {
+      "name": "zqhong",
+      "email": "zqh0513@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Zqhong\\FastdValidator\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "require": {
+    "fastd/container": "^3.0",
+    "fastd/config": "^3.0",
+    "runner/validator": "^0.2.7",
+    "fastd/http": "^3.0"
+  }
+}
