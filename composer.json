@@ -12,7 +12,7 @@
       "Zqhong\\FastdValidator\\": "src"
     },
     "files": [
-      "src/helpers.php"
+      "src/helper.php"
     ]
   },
   "require": {
