@@ -5,6 +5,7 @@ namespace Zqhong\FastdValidator;
 
 use FastD\Http\Response;
 use FastD\Http\ServerRequest;
+use Illuminate\Support\Arr;
 use Runner\Validator\Validator as RunnerValidator;
 
 class Validator
@@ -31,7 +32,7 @@ class Validator
         }
         $validator = new RunnerValidator($data, $rules);
         if (!$validator->validate()) {
-            abort(Response::HTTP_UNPROCESSABLE_ENTITY, implode(',', $validator->messages()));
+            abort(Response::HTTP_UNPROCESSABLE_ENTITY, implode(',', Arr::flatten($validator->messages())));
         }
         return $validator;
     }
@@ -50,7 +51,7 @@ class Validator
         }
         $validator = new RunnerValidator($data, $rules);
         if (!$validator->validate()) {
-            abort(Response::HTTP_UNPROCESSABLE_ENTITY, implode(',', $validator->messages()));
+            abort(Response::HTTP_UNPROCESSABLE_ENTITY, implode(',', Arr::flatten($validator->messages())));
         }
         return $validator;
     }
